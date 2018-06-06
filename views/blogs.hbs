@@ -3,9 +3,11 @@
 <div class="blog-section">
     {{#each posts}}
         <div class="blog-post">
+            <a href="/blog/{{this.id}}">
             <h3 class="post-title">{{title}}</h3>
             <p>{{author}}</p>
             <p>{{content}}</p>
+            </a>
         </div>
     {{/each}}
 </div>
