@@ -34,7 +34,7 @@ app.get('/branch', (req, res, next) => {
 
 let server;
 
-function runServer() {
+function runServer(DB_URL, PORT) {
     return new Promise((resolve, reject) => {
         mongoose.connect(DB_URL, err => {
             if (err) {
@@ -68,7 +68,10 @@ function closeServer() {
 }
 
 if (require.main === module) {
-    runServer(DB_URL).catch(err => console.error(err));
+    console.log(DB_URL, PORT);
+    runServer(DB_URL, PORT).catch(err => {
+        console.error(err);
+    });
 }
 
 module.exports = {app, runServer, closeServer};

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postSchema = new Schema({
+const postSchema = new mongoose.Schema({
     title: String,
     content: String,
     author: {
@@ -13,8 +13,8 @@ const postSchema = new Schema({
     }
 });
 
-postSchema.virtual('authorName', function get() {
-    return this.author.firstName + " " + this.author.lastName;
+postSchema.virtual('authorName').get(function() {
+    return `${this.author.firstName} ${this.author.lastName}`.trim();
 });
 
 postSchema.methods.serialize = function() {
