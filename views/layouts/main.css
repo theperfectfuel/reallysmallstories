@@ -36,9 +36,12 @@ ul li {
     padding: 20px;
 }
 
+li a, .blog-post a {
+    text-decoration: none;
+}
+
 li a {
     color: white;
-    text-decoration: none;
 }
 
 input, button, textarea {
