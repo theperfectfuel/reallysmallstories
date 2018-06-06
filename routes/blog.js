@@ -4,10 +4,10 @@ const Router = express.Router();
 const Post = require('../models/post');
 
 Router.get('/', (req, res, next) => {
-    Post.find()
+    Post.find().sort({created: -1})
         .then(posts => {
             let renderedPosts = posts.map(post => post.serialize());
-            res.render('blogs', renderedPosts);
+            res.render('blogs', {posts: renderedPosts});
         });
 });
 
@@ -18,7 +18,7 @@ Router.post('/', (req, res, next) => {
       content: req.body.content
     })
     .then(post => {
-        res.render('blog', post);
+        res.redirect('/blog');
     })
     .catch(err => {
         console.log(err);
