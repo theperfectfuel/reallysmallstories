@@ -11,6 +11,14 @@ Router.get('/', (req, res, next) => {
         });
 });
 
+Router.get('/:id', (req, res, next) => {
+    Post.findById(req.params.id)
+        .then(post => {
+            let renderedPost = post.serialize();
+            res.render('blog', {post: renderedPost});
+        });
+});
+
 Router.post('/', (req, res, next) => {
     Post.create({
       title: req.body.title,
