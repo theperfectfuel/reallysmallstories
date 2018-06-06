@@ -16,21 +16,22 @@ mongoose.Promise = global.Promise;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('common'));
+app.use(express.static('views'));
 
 app.use('/blog', blogRouter);
 
-app.engine('hbs', hbs({
-    extname: 'hbs',
+app.engine('.hbs', hbs({
+    extname: '.hbs',
     defaultLayout: 'main'
 }));
-app.set('view engine', 'hbs');
+app.set('view engine', '.hbs');
 
 app.get('/', (req, res, next) => {
     res.render('root');
 });
 
-app.get('/branch', (req, res, next) => {
-    res.render('branch');
+app.get('/new-post', (req, res, next) => {
+    res.render('new-post');
 });
 
 let server;
