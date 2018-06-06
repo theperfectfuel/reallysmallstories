@@ -1,9 +1,7 @@
 <h1>Welcome to the blog</h1>
 {{message}}
-{{#each post}}
-    <div>
-        <h3>{{title}}</h3>
-        <p>{{author}}</p>
-        <p>{{content}}</p>
-    </div>
-{{/each}}
+<div>
+    <h3>{{post.title}}</h3>
+    <p>{{post.author}}</p>
+    <p>{{post.content}}</p>
+</div>
