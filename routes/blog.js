@@ -11,4 +11,18 @@ Router.get('/', (req, res, next) => {
         });
 });
 
+Router.post('/', (req, res, next) => {
+    Post.create({
+      title: req.body.title,
+      author: {firstName: req.body.firstName, lastName: req.body.lastName},
+      content: req.body.content
+    })
+    .then(post => {
+        res.render('blog', post);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+});
+
 module.exports = Router;

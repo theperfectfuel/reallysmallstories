@@ -14,6 +14,7 @@ const blogRouter = require('./routes/blog');
 mongoose.Promise = global.Promise;
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(morgan('common'));
 
 app.use('/blog', blogRouter);
