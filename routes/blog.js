@@ -22,7 +22,15 @@ Router.post('/', (req, res, next) => {
     })
     .catch(err => {
         console.log(err);
-    })
+    });
+});
+
+Router.delete('/:id', (req, res, next) => {
+    Post.findByIdAndRemove(req.params.id)
+        .then(post => res.render('blog', {message: 'Post successfully removed'}))
+        .catch(err => {
+            res.render('blog', {message: `Error deleting post: ${err}`})
+        });
 });
 
 module.exports = Router;
