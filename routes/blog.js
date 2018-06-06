@@ -7,7 +7,7 @@ Router.get('/', (req, res, next) => {
     Post.find()
         .then(posts => {
             let renderedPosts = posts.map(post => post.serialize());
-            res.render('blog', renderedPosts);
+            res.render('blogs', renderedPosts);
         });
 });
 
@@ -23,6 +23,19 @@ Router.post('/', (req, res, next) => {
     .catch(err => {
         console.log(err);
     });
+});
+
+Router.put('/:id', (req, res, next) => {
+    Post.findByIdAndUpdate(req.params.id, {$set: {
+        title: req.body.title,
+        content: req.body.content
+    }})
+        .then(post => {
+            res.render('blog', {post: post, message: `Successfully updated post`});
+        })
+        .catch(err => {
+            res.render('blog', {message: `Error updating post: ${err}`});
+        });
 });
 
 Router.delete('/:id', (req, res, next) => {
