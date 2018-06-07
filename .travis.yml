@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: iys2AgvYZ+MQljMsLurG2gSiSFlvzL2vgxx14GlR8me1MRqTTpJXoK9ZX4F1MhCDi7xmeayfeH8wEd1Gpl5KWkB11y/n0jHeSH/VlF/nt0KF3VisehJutvIM/F9HO+aD9vwoz72sNiJCep8l6N69BoSf4fjk0Bt8G9Ls72tK0RFuJlcZJR0g8MTewTklUjySiQ+ugbEPmPg83mDZsBkTpbl30vTEo2lWbRDPgoAMgSdtbJaAY27+Uc0WJSisFZefQFcGhWRaPAkYmv6KdU/6x6ms+Y5lUcnU/5r05dKhK0zAeBF5eSz/BtMd+dxiu5lBQbrVM43BDgilUg7gVOpRu945hNX8MPXDq4Rf47YQYCfkvyBM7xiFwFPQ162YbAA9WdirCrKhtlmHmGXdB65sceagTq8cTQNTGiXwIssvKABJ01gUjWbV1IR1gr3lzwlQsasrYV/HnK2q8iAIn1i1+juEDhkNkm0l9n5ITXcCMr8HmjMBfmMBgw7plCpfXqXgycVyOA9PACnzAG6nVwJY8jy8oH+DFfE27syaB5J7oUB4Mq+PkALGff66qiS2t4tOzbWruUi289w7yWh8msiFAXGdDoTk2utEPdcXglUIISbtEaXNoEYDZLArLrMS6OvxKXTEYCpY3gZsJtI90ddE9l6RSV5X8EomxN+Tni3L9TI=
+  app: tranquil-wave-94956
+  on:
+    repo: rcwlabs/mehn-blog
