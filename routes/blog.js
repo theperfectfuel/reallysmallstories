@@ -8,6 +8,16 @@ Router.get('/', (req, res, next) => {
         .then(posts => {
             let renderedPosts = posts.map(post => post.serialize());
             res.render('blogs', {posts: renderedPosts});
+            res.json(renderedPosts);
+        });
+});
+
+// API ENDPOINT RETURNING ONLY JSON FOR TESTING
+Router.get('/api', (req, res, next) => {
+    Post.find().sort({created: -1})
+        .then(posts => {
+            let renderedPosts = posts.map(post => post.serialize());
+            res.json(renderedPosts);
         });
 });
 
