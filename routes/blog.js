@@ -8,7 +8,6 @@ Router.get('/', (req, res, next) => {
         .then(posts => {
             let renderedPosts = posts.map(post => post.serialize());
             res.render('blogs', {posts: renderedPosts});
-            res.json(renderedPosts);
         });
 });
 
