@@ -3,9 +3,12 @@
     {{#each posts}}
         <div class="blog-post">
             <a href="/blog/{{this.id}}">
-            <h3 class="post-title">{{title}}</h3>
-            <p class="post-author">by: {{author}}</p>
-            <p>{{content}}</p>
+            <div class="post-header"></div>
+            <div class="post-content">
+                <h3 class="post-title">{{title}}</h3>
+                <p class="post-author">by: {{author}}</p>
+                {{content}}
+            </div>
             </a>
         </div>
     {{/each}}
