@@ -40,8 +40,12 @@ li a, .blog-post a {
     text-decoration: none;
 }
 
+.blog-post a {
+    color: #222;
+}
+
 li a {
-    color: white;
+    color: #fff;
 }
 
 input, button, textarea {
