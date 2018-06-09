@@ -32,7 +32,8 @@ Router.post('/', (req, res, next) => {
     Post.create({
       title: req.body.title,
       author: {firstName: req.body.firstName, lastName: req.body.lastName},
-      content: req.body.content
+      content: req.body.content,
+      headerImg: req.body.headerImg
     })
     .then(post => {
         res.redirect('/blog');
@@ -45,7 +46,8 @@ Router.post('/', (req, res, next) => {
 Router.put('/:id', (req, res, next) => {
     Post.findByIdAndUpdate(req.params.id, {$set: {
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        headerImg: req.body.headerImg
     }})
         .then(post => {
             res.render('blog', {post: post, message: `Successfully updated post`});
