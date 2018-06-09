@@ -2,8 +2,11 @@
 
 <div class="blog-section">
     <div class="blog-post">
-        <h3 class="post-title">{{post.title}}</h3>
-        <p class="post-author">by: {{post.author}}</p>
-        <p class="post-content">{{post.content}}</p>
+        <div class="post-header"></div>
+        <div class="post-content">
+            <h3 class="post-title">{{post.title}}</h3>
+            <p class="post-author">by: {{post.author}}</p>
+            {{post.content}}
+        </div>
     </div>
 </div>
