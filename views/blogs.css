@@ -59,7 +59,7 @@ li a, .blog-post a {
     padding-top: 2em;
 }
 
-.delete-post:after {
+.post-buttons:after {
     content:'';
     display:block; /* or whatever else than inline */
     clear:both;

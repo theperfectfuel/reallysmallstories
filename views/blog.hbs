@@ -13,9 +13,12 @@
             {{post.content}}
         </div>
         <div class="post-footer">
-            <div class="delete-post">
+            <div class="post-buttons">
                 <form method="post" action="/blog/{{post.id}}?_method=delete">
                     <button class="btn" type="submit">Delete</button>
+                </form>
+                <form method="get" action="/blog/update/{{post.id}}">
+                    <button class="btn" type="submit">Update</button>
                 </form>
             </div>
         </div>
