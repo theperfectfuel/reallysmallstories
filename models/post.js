@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
     created: {
         type: Date, 
         default: Date.now
+    },
+    upvotes: {
+        type: Number,
+        default: 0
     }
 });
 
@@ -28,7 +32,8 @@ postSchema.methods.serialize = function() {
         headerImg: this.headerImg,
         author: this.authorName,
         id: this._id,
-        created: this.created
+        created: this.created,
+        upvotes: this.upvotes
     };
 };
 

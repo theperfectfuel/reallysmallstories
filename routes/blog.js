@@ -65,6 +65,18 @@ Router.put('/:id', (req, res, next) => {
         });
 });
 
+Router.put('/upvote/:id', (req, res, next) => {
+    Post.findByIdAndUpdate(req.params.id, {$inc: {
+        upvotes: 1
+    }})
+        .then(post => {
+            res.redirect(`/blog/${post.id}`);
+        })
+        .catch(err => {
+            res.render('blog', {message: `Error updating post: ${err}`});
+        });
+});
+
 Router.delete('/:id', (req, res, next) => {
     Post.findByIdAndRemove(req.params.id)
         .then(post => res.redirect('/blog'))
