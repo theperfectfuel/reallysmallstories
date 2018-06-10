@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const hbs = require('express-handlebars');
+const methodOverride = require('method-override');
 
 const config = require('./config')
 const DB_URL = config.DB_URL;
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('common'));
 app.use(express.static('views'));
+app.use(methodOverride('_method'));
 
 app.use('/blog', blogRouter);
 
