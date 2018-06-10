@@ -28,6 +28,14 @@ Router.get('/:id', (req, res, next) => {
         });
 });
 
+Router.get('/update/:id', (req, res, next) => {
+    Post.findById(req.params.id)
+        .then(post => {
+            let renderedPost = post.serialize();
+            res.render('update-post', {post: renderedPost});
+        });
+});
+
 Router.post('/', (req, res, next) => {
     Post.create({
       title: req.body.title,
@@ -50,7 +58,7 @@ Router.put('/:id', (req, res, next) => {
         headerImg: req.body.headerImg
     }})
         .then(post => {
-            res.render('blog', {post: post, message: `Successfully updated post`});
+            res.redirect(`/blog/${post.id}`);
         })
         .catch(err => {
             res.render('blog', {message: `Error updating post: ${err}`});

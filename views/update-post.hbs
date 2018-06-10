@@ -1,0 +1,13 @@
+<div class="new-story">
+    <h1>Update your story</h1>
+    <div class="story-form">
+        <form method="post" action="/blog/{{post.id}}?_method=put">
+            <input type="text" name="title" value="{{post.title}}"><br />
+            <input type="text" name="headerImg" value="{{post.headerImg}}"><br />
+            <textarea rows="12" cols="40" name="content">{{post.content}}</textarea><br />
+            <div class="post-buttons">
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
