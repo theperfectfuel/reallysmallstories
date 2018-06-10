@@ -4,12 +4,15 @@
         <div class="blog-post">
             <a href="/blog/{{this.id}}">
             <div 
-                style="background: url('{{headerImg}}');"
+                style="background-image: url('{{headerImg}}'); background-position: top center; background-size: auto;"
                 class="post-header">
             </div>
             <div class="post-content">
                 <h3 class="post-title">{{title}}</h3>
-                <p class="post-author">by: {{author}}</p>
+                <p class="post-author">
+                    by: {{author}}<br>
+                    Upvotes: {{upvotes}}
+                </p>
                 {{content}}
             </div>
             </a>
