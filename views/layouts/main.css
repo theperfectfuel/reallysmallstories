@@ -66,4 +66,24 @@ input, button, textarea {
     padding: .5em;
     border-radius: 3px;
     margin-bottom: 10px;
+    width: 80%;
+}
+
+.btn {
+    background-color: rgb(15, 120, 155);
+    margin: .5em;
+    padding: .5em 1em;
+    width: auto;
+    float: right;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px gray;
+    border: none;
+    color: #efefef;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0;
+    color: #ddd;
 }

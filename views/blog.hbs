@@ -12,5 +12,12 @@
             <p class="post-author">by: {{post.author}}</p>
             {{post.content}}
         </div>
+        <div class="post-footer">
+            <div class="delete-post">
+                <form method="post" action="/blog/{{post.id}}?_method=delete">
+                    <button class="btn" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

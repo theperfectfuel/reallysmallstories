@@ -59,7 +59,7 @@ Router.put('/:id', (req, res, next) => {
 
 Router.delete('/:id', (req, res, next) => {
     Post.findByIdAndRemove(req.params.id)
-        .then(post => res.render('blog', {message: 'Post successfully removed'}))
+        .then(post => res.redirect('/blog'))
         .catch(err => {
             res.render('blog', {message: `Error deleting post: ${err}`})
         });
