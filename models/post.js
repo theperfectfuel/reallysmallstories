@@ -32,7 +32,7 @@ postSchema.methods.serialize = function() {
     return {
         title: this.title,
         content: this.content,
-        headerImg: this.headerImg,
+        headerImg: `https://source.unsplash.com/${this.headerImg}/1000x500`,
         author: this.authorName,
         id: this._id,
         created: this.created,

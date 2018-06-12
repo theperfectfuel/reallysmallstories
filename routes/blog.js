@@ -63,8 +63,7 @@ Router.post('/', (req, res, next) => {
 Router.put('/:id', (req, res, next) => {
     Post.findByIdAndUpdate(req.params.id, {$set: {
         title: req.body.title,
-        content: req.body.content,
-        headerImg: req.body.headerImg
+        content: req.body.content
     }})
         .then(post => {
             res.redirect(`/blog/${post.id}`);

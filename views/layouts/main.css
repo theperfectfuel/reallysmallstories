@@ -88,6 +88,19 @@ footer h3 {
     width: 200px;
 }
 
+.image-directions {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+.image-directions ol li {
+    margin: .5em 0;
+}
+
+.image-directions ol li a {
+    color: rgb(15, 120, 155);
+}
+
 ul {
     list-style-type: none;
 }
