@@ -1,11 +1,23 @@
 <div class="new-story">
     <h1>Create a new story</h1>
     <div class="story-form">
+        <div class="image-directions">We use Unsplash for the story images because they have awesome photos and because
+        they're free to use.  You'll need to find an image you like and grab its ID from 
+        the image URL.  Here's how: 
+            <ol>
+                <li>Head over to <a href="https://unsplash.com" target="_blank"><strong>Unsplash</strong></a></li>
+                <li>Find an image you like and click on it</li>
+                <li>In the address bar in your browser, find the code at the end of the link<br>
+                    ex: <code>https://unsplash.com/photos/<strong>AhiUnolb7cg</strong></code>
+                </li>
+                <li>Copy and paste that ID into the Unsplash image ID field below</li>
+            </ol>
+        </div>
         <form method="post" action="/blog">
             <input type="text" name="title" placeholder="Title"><br />
             <input type="text" name="firstName" placeholder="First Name"><br />
             <input type="text" name="lastName" placeholder="Last Name"><br />
-            <input type="text" name="headerImg" placeholder="Header Image URL"><br />
+            <input type="text" name="headerImg" placeholder="Unsplash Image ID"><br />
             <textarea rows="12" cols="40" name="content" placeholder="Content"></textarea><br />
             <div class="post-buttons">
                 <button class="btn" type="submit">Submit</button>
