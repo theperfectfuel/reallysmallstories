@@ -21,10 +21,17 @@ Router.get('/api', (req, res, next) => {
 });
 
 Router.get('/:id', (req, res, next) => {
+    let userId;
+    if (!req.user) {
+        userId = false;
+    } else {
+        userId = req.user.id;
+    }
     Post.findById(req.params.id)
         .then(post => {
+            let userMatch = (userId == post.userId);
             let renderedPost = post.serialize();
-            res.render('blog', {post: renderedPost, user: req.user});
+            res.render('blog', {post: renderedPost, user: req.user, userMatch: userMatch});
         });
 });
 
@@ -37,11 +44,13 @@ Router.get('/update/:id', (req, res, next) => {
 });
 
 Router.post('/', (req, res, next) => {
+    userId = req.user.id;
     Post.create({
       title: req.body.title,
       author: {firstName: req.body.firstName, lastName: req.body.lastName},
       content: req.body.content,
-      headerImg: req.body.headerImg
+      headerImg: req.body.headerImg,
+      userId: userId
     })
     .then(post => {
         res.redirect('/blog');

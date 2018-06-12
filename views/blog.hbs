@@ -17,12 +17,14 @@
         </div>
         <div class="post-footer">
             <div class="post-buttons">
+                {{#if userMatch}}
                 <form method="post" action="/blog/{{post.id}}?_method=delete">
                     <button class="btn btn-story" type="submit">Delete</button>
                 </form>
                 <form method="get" action="/blog/update/{{post.id}}">
                     <button class="btn btn-story" type="submit">Update</button>
                 </form>
+                {{/if}}
                 <form method="post" action="/blog/upvote/{{post.id}}?_method=put">
                     <button class="btn btn-story" type="submit">Upvote</button>
                 </form>
