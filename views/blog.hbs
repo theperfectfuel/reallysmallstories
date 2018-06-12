@@ -18,13 +18,13 @@
         <div class="post-footer">
             <div class="post-buttons">
                 <form method="post" action="/blog/{{post.id}}?_method=delete">
-                    <button class="btn" type="submit">Delete</button>
+                    <button class="btn btn-story" type="submit">Delete</button>
                 </form>
                 <form method="get" action="/blog/update/{{post.id}}">
-                    <button class="btn" type="submit">Update</button>
+                    <button class="btn btn-story" type="submit">Update</button>
                 </form>
                 <form method="post" action="/blog/upvote/{{post.id}}?_method=put">
-                    <button class="btn" type="submit">Upvote</button>
+                    <button class="btn btn-story" type="submit">Upvote</button>
                 </form>
             </div>
         </div>

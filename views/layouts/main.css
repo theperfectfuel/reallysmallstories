@@ -9,9 +9,12 @@ html {
 }
 
 body {
-    background: white;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    background-image: url("../images/topography.svg"),
+    linear-gradient(to right, #abbaab, #ffffff);
+    min-height: calc(100vh - 100px);
+    background-attachment: fixed;
 }
 
 .main-conainer {
@@ -48,6 +51,43 @@ footer h3 {
     text-align: center;
 }
 
+.intro-section {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    font-size: 1.3em;
+    max-width: 1000px;;
+}
+
+.intro-text p {
+    margin: 1em 0;
+    text-align: justify;
+}
+
+.intro-section h1 {
+    margin: 2em 0;
+}
+
+.register-section, .login {
+    width: 80%;
+    text-align: center;
+    margin: 2em auto;
+    padding: 2em;
+}
+
+.register-section h3, .login h3 {
+    padding: 2em 0;
+}
+
+.welcome-buttons {
+    margin: 2em 0;
+}
+
+.form-home {
+    display: inline-block;
+    width: 200px;
+}
+
 ul {
     list-style-type: none;
 }
@@ -61,7 +101,7 @@ li a {
     color: #fff;
 }
 
-input, button, textarea {
+input, textarea {
     font-size: 1em;
     padding: .5em;
     border-radius: 3px;
@@ -69,21 +109,41 @@ input, button, textarea {
     width: 80%;
 }
 
-.btn {
+.btn, .btn-home {
     background-color: rgb(15, 120, 155);
     margin: .5em;
     padding: .5em 1em;
-    width: auto;
-    float: right;
     cursor: pointer;
     box-shadow: 1px 1px 3px gray;
     border: none;
     color: #efefef;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.btn:hover {
+.btn {
+    width: auto;
+}
+
+.btn-story {
+    float: right;
+}
+
+.btn-home {
+    width: 120px;
+}
+
+.btn-form {
+    width: 200px;
+}
+
+.btn:hover, .btn-home:hover {
     box-shadow: 0 0 0;
     color: #ddd;
+}
+
+.welcome-buttons:after, .btn-form:after {
+    content:'';
+    display:block; /* or whatever else than inline */
+    clear:both;
 }

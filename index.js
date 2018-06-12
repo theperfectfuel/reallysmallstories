@@ -48,7 +48,6 @@ app.use('/blog', blogRouter);
 
 // ROUTES
 app.get('/', (req, res, next) => {
-    console.log(req.user);
     res.render('root', {user: req.user});
 });
 

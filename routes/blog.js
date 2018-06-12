@@ -4,10 +4,8 @@ const Router = express.Router();
 const Post = require('../models/post');
 
 Router.get('/', (req, res, next) => {
-    console.log(`First user log: ${req.user}`);
     Post.find().sort({created: -1})
         .then(posts => {
-            console.log(`Second user log: ${req.user}`);
             let renderedPosts = posts.map(post => post.serialize());
             res.render('blogs', {posts: renderedPosts, user: req.user});
         });
