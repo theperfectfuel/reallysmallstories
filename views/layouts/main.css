@@ -11,8 +11,7 @@ html {
 body {
     font-family: sans-serif;
     font-size: 16px;
-    background-image: url("../images/topography.svg"),
-    linear-gradient(to right, #abbaab, #ffffff);
+    background: linear-gradient(to right, #abbaab, #ffffff);
     min-height: calc(100vh - 100px);
     background-attachment: fixed;
 }
@@ -23,12 +22,14 @@ body {
 }
 
 header {
-    height: 140px;
+    height: 350px;
     text-align: center;
+    background-color: #ddd;
+    box-shadow: 1px 1px 1px #ccc;
 }
 
 .header-text {
-    padding: 2em;
+    padding: 2em 0 .5em;
     font-size: 3em;
 }
 
@@ -37,7 +38,6 @@ nav {
     height: 50px;
     background-color: #212121;
     color: white;
-    margin-bottom: 20px;
 }
 
 footer {

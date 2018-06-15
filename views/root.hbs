@@ -1,5 +1,5 @@
 <div class="intro-section">
-    <h1>Welcome</h1>
+
     <div class="intro-text">
         <p>
             The idea behind this site is to showcase short, informal pieces of literature that
@@ -16,12 +16,41 @@
         </p>
     </div>
 
-    <div class="welcome-buttons">
-        <form class="form-home" action="/register" method="get">
-            <button class="btn-home" type="submit">Register</button>
-        </form>
-        <form class="form-home" action="/login" method="get">
-            <button class="btn-home" type="submit">Login</button>
-        </form>
+</div>
+
+<div class="intro-section">
+    <h2>Latest Story</h2>
+</div>
+
+<div class="blog-section">
+    <div class="blog-post">
+        <div 
+            style="background-image: url('{{post.headerImg}}'); background-position: top center; background-size: auto;"
+            class="post-header">
+
+        </div>
+        <div class="post-content">
+            <h3 class="post-title">{{post.title}}</h3>
+            <p class="post-author">
+                by: {{post.author}}<br>
+                Upvotes: {{post.upvotes}}
+            </p>
+            {{post.content}}
+        </div>
+        <div class="post-footer">
+            <div class="post-buttons">
+                {{#if userMatch}}
+                <form method="post" action="/blog/{{post.id}}?_method=delete">
+                    <button class="btn btn-story" type="submit">Delete</button>
+                </form>
+                <form method="get" action="/blog/update/{{post.id}}">
+                    <button class="btn btn-story" type="submit">Update</button>
+                </form>
+                {{/if}}
+                <form method="post" action="/blog/upvote/{{post.id}}?_method=put">
+                    <button class="btn btn-story" type="submit">Upvote</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

@@ -15,6 +15,8 @@ const DB_URL = process.env.DB_URL;
 const PORT = process.env.PORT;
 const AUTH_SECRET = process.env.AUTH_SECRET;
 
+const Post = require('./models/post');
+
 const blogRouter = require('./routes/blog');
 const User = require('./models/user');
 
@@ -48,7 +50,11 @@ app.use('/blog', blogRouter);
 
 // ROUTES
 app.get('/', (req, res, next) => {
-    res.render('root', {user: req.user});
+    Post.findOne().sort({created: -1})
+        .then(post => {
+            let renderedPost = post.serialize();
+            res.render('root', {post: renderedPost, user: req.user});
+        });
 });
 
 app.get('/new-post', isLoggedIn, (req, res, next) => {
