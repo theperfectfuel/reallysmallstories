@@ -1,4 +1,5 @@
-## Simple blog app with Mongo, Express, Handlebars and Node
+## Simple blog type app with Mongo, Express, Handlebars and Node
+### Users can create "micro stories" based on Unsplash images
 
 ### Created 6/5/18
 
