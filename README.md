@@ -15,5 +15,5 @@
 - Node.js
 
 ### Coming Features
-- Unsplash API integration
+- Even better unsplash API integration
 - Social platform sharing
